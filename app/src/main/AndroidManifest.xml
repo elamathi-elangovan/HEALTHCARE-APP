@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MYHEALTH"
         tools:targetApi="31">
-
+        <activity
+            android:name=".registerActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

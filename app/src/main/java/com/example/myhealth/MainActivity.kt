@@ -42,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         orderDetails.setOnClickListener {
             startActivity(Intent(this@MainActivity, BookingAppActivity::class.java))
         }
+        //health Articles
+        val healthCard: CardView = findViewById(R.id.cardHealthArticles)
+
+        healthCard.setOnClickListener {
+            startActivity(Intent(this@MainActivity, HealthArticleActivity::class.java))
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

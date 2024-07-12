@@ -13,6 +13,19 @@
         android:theme="@style/Theme.MYHEALTH"
         tools:targetApi="31">
         <activity
+            android:name=".BookingAppActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Doc_DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FindDocActivity"
+            android:exported="false" />
+        <activity
             android:name=".registerActivity2"
             android:exported="false" />
         <activity

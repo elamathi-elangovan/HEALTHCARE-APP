@@ -11,17 +11,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class registerActivity2 : AppCompatActivity() {
+    private lateinit var db: Database
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_register2)
+        db = Database(this, "myhealth.db", null, 1)
 
-        val usernameEditText: EditText = findViewById(R.id.editTextText)
-        val passwordEditText: EditText = findViewById(R.id.editTextTextPassword6)
-        val confirmPasswordEditText: EditText = findViewById(R.id.editTextTextPassword7)
-        val emailEditText: EditText = findViewById(R.id.editTextTextEmailAddress)
+        val usernameEditText: EditText = findViewById(R.id.editTexApptName)
+        val passwordEditText: EditText = findViewById(R.id.editTextAppcontact)
+        val confirmPasswordEditText: EditText = findViewById(R.id.editTextAppFees)
+        val emailEditText: EditText = findViewById(R.id.editTextAppAddress)
         val phoneEditText: EditText = findViewById(R.id.editTextPhone)
-        val registerButton: Button = findViewById(R.id.button)
+        val registerButton: Button = findViewById(R.id.buttonBookApp)
 
         registerButton.setOnClickListener {
             val username = usernameEditText.text.toString().trim()
@@ -35,6 +37,7 @@ class registerActivity2 : AppCompatActivity() {
             } else if (password != confirmPassword) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             } else {
+                db.register(username,email,password)
                 // Handle the registration logic here (e.g., save user info to the database, etc.)
                 Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
                 val intent= Intent(this,MainActivity::class.java)
